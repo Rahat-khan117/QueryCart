@@ -1,7 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { valueContext } from '../LayOut/MainLayout';
 
 const SignUp = () => {
+   
+    const {handleSignup,googleLogin} = useContext(valueContext);
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const name = e.target.user_name.value
+        const photo = e.target.image_url.value
+        const email = e.target.email.value
+        const password = e.target.password.value
+
+       if (!/^.{6,}$/.test(password)) {
+          return alert("password Should be at least 6 character")
+       }
+       if (!/^(?=.*[A-Z]).+$/.test(password)) {
+        return alert("password Should have at least one uppercase letter")
+       }
+       if (!/^(?=.*[a-z]).+$/.test(password)) {
+        return alert("password Should have at least one lowercase letter")
+       }
+       if(!name) {
+         return alert("please enter your name")
+       }
+       if(!photo) {
+        return alert("please enter your photo Url")
+      }
+        handleSignup(email,password,name,photo)
+           
+        
+    }
+
     return (
         <div>
             <div className="flex justify-center mt-5 pb-10">
@@ -14,7 +45,7 @@ const SignUp = () => {
       </div>
       <div className=" space-y-4">
           <button
-            // onClick={googleLogin}
+             onClick={googleLogin}
             aria-label="Login with Google"
             type="button"
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"
@@ -35,7 +66,7 @@ const SignUp = () => {
           <p className="px-3 dark:text-gray-600">OR</p>
           <hr className="w-full dark:text-gray-600" />
         </div>
-      <form  className="space-y-12">
+      <form onSubmit={handleSubmit} className="space-y-12">
         <div className="space-y-4">
           <div>
             <label htmlFor="email" className="block mb-2 text-sm">

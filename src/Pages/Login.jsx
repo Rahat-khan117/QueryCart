@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router';
+import { valueContext } from '../LayOut/MainLayout';
 
 const Login = () => {
+    const {googleLogin,handleLogin} =useContext(valueContext);
+
+    const handleSubmit = (e)=> {
+        e.preventDefault()
+        const email = e.target.email.value
+        const password = e.target.password.value
+        handleLogin(email,password)
+
+    }
+
     return (
         <div className="flex justify-center mt-6 pb-10">
       <div className="w-full max-w-md bg-white p-4 rounded-md shadow sm:p-8 dark:bg-gray-50 dark:text-gray-800">
@@ -22,7 +33,7 @@ const Login = () => {
         </p>
         <div className="my-6 space-y-4">
           <button
-            // onClick={googleLogin}
+            onClick={googleLogin}
             aria-label="Login with Google"
             type="button"
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-violet-600"
@@ -43,7 +54,7 @@ const Login = () => {
           <p className="px-3 dark:text-gray-600">OR</p>
           <hr className="w-full dark:text-gray-600" />
         </div>
-        <form  className="space-y-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm">

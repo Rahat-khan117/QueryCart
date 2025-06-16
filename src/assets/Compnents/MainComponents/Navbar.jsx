@@ -1,8 +1,11 @@
-import React from "react";
-import { NavLink, useNavigate } from "react-router";
+import React, { useContext } from "react";
+import { NavLink, useLocation, useNavigate } from "react-router";
 import { Tooltip } from "react-tooltip";
+import { valueContext } from "../../../LayOut/MainLayout";
 
-const Navbar = () => {
+const Navbar = ({handleMenu}) => {
+    const {pathname} = useLocation()
+    const {userN,handleLogout} = useContext(valueContext);
   const navigate = useNavigate();
   return (
     <div
@@ -17,15 +20,15 @@ const Navbar = () => {
             className="h-[50px] w-[50px] rounded-2xl"
             src="https://i.ibb.co/whg4kN1z/logo.jpg"
           />
-          <p className="text-green-600 lg:text-4xl md:text-3xl text-4xl font-bold">
+          <p className="text-green-600 xl:text-3xl 2xl:text-4xl lg:text-2xl md:text-3xl text-4xl font-bold">
             QUERY<span className="text-black">Cart</span>
           </p>
         </div>
 
        {/* for logged in */}
 
-       <div className="hidden">
-         <div className="lg:flex items-center xl:gap-8 lg:gap-6 md:gap-4 hidden ">
+       <div className={userN ? "" : "hidden"}>
+         <div className="lg:flex items-center xl:gap-10 lg:gap-5 md:gap-4 hidden ">
           
           <NavLink
             to="/"
@@ -35,7 +38,7 @@ const Navbar = () => {
                 : "cursor-pointer"
             }
           >
-            <div className="text-xl flex items-center">
+            <div className=" xl:text-xl text-[16px] flex items-center">
               <p>Home</p>
             </div>
           </NavLink>
@@ -47,7 +50,7 @@ const Navbar = () => {
                 : "cursor-pointer"
             }
           >
-            <div className="text-xl flex items-center">
+            <div className="xl:text-xl text-[16px] flex items-center">
               <p>Queries</p>
             </div>
           </NavLink>
@@ -59,7 +62,7 @@ const Navbar = () => {
                 : "cursor-pointer"
             }
           >
-            <div className="text-xl flex items-center">
+            <div className="xl:text-xl text-[16px] flex items-center">
               <p>Recommendations For Me</p>
             </div>
           </NavLink>
@@ -71,7 +74,7 @@ const Navbar = () => {
                 : "cursor-pointer"
             }
           >
-            <div className="text-xl flex items-center">
+            <div className="xl:text-xl text-[16px] flex items-center">
               <p>My Queries</p>
             </div>
           </NavLink>
@@ -83,13 +86,13 @@ const Navbar = () => {
                 : "cursor-pointer"
             }
           >
-            <div className="text-xl flex items-center">
+            <div className="xl:text-xl text-[16px] flex items-center">
               <p>My recommendations</p>
             </div>
           </NavLink>
 
           <div className="flex gap-3 items-center ">
-            {/* <div>
+            <div>
               {userN ? (
                 <button
                   onClick={() => {
@@ -111,8 +114,8 @@ const Navbar = () => {
                   Log in
                 </button>
               )}
-            </div> */}
-            {/* <div className="relative group inline-block cursor-pointer">
+            </div>
+            <div className="relative group inline-block cursor-pointer">
               <a href="#" className="hover">
                 <img
                   className="h-[50px] w-[50px] rounded-full"
@@ -126,14 +129,14 @@ const Navbar = () => {
               <Tooltip anchorSelect=".hover" place="bottom">
                 {userN ? userN.displayName : "No user"}
               </Tooltip>
-            </div> */}
+            </div>
           </div>
         </div>
        </div>
       
       {/* for log out */}
 
-       <div className="">
+       <div className={userN ? "hidden" : "" }>
           <div className="lg:flex items-center xl:gap-16 lg:gap-10 md:gap-4 hidden ">
           <NavLink
             to="/"
@@ -161,7 +164,7 @@ const Navbar = () => {
           </NavLink>
 
           <div className="flex gap-3 items-center ">
-            {/* <div>
+            <div>
               {userN ? (
                 <button
                   onClick={() => {
@@ -183,8 +186,8 @@ const Navbar = () => {
                   Log in
                 </button>
               )}
-            </div> */}
-            {/* <div className="relative group inline-block cursor-pointer">
+            </div>
+            <div className="relative group inline-block cursor-pointer">
               <a href="#" className="hover">
                 <img
                   className="h-[50px] w-[50px] rounded-full"
@@ -198,7 +201,7 @@ const Navbar = () => {
               <Tooltip anchorSelect=".hover" place="bottom">
                 {userN ? userN.displayName : "No user"}
               </Tooltip>
-            </div> */}
+            </div>
           </div>
         </div>
        </div>
@@ -209,7 +212,7 @@ const Navbar = () => {
       </div>
       
       <div className="lg:hidden block text-3xl ml-5">
-        <i  className="fa-solid fa-bars "></i>
+        <i onClick={handleMenu}  className="fa-solid fa-bars "></i>
       </div>
     </div>
   );
