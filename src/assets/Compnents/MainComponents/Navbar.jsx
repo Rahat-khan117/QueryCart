@@ -24,7 +24,7 @@ const Navbar = () => {
 
        {/* for logged in */}
 
-       <div className="">
+       <div className="hidden">
          <div className="lg:flex items-center xl:gap-8 lg:gap-6 md:gap-4 hidden ">
           
           <NavLink
@@ -133,7 +133,7 @@ const Navbar = () => {
       
       {/* for log out */}
 
-       <div className="hidden">
+       <div className="">
           <div className="lg:flex items-center xl:gap-16 lg:gap-10 md:gap-4 hidden ">
           <NavLink
             to="/"
