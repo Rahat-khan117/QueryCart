@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "productName": "iPhone 14",
+      "productBrand": "Apple",
+      "productImageUrl": "https://i.ibb.co/FkNSqNq2/11.jpg",
+      "queryTitle": "Is there any better product that gives me the same quality?",
+      "boycottingReason": "Too expensive for the features offered and lack of customization options."
+    },
+    {
+      "id": 2,
+      "productName": "Galaxy Buds Pro",
+      "productBrand": "Samsung",
+      "productImageUrl": "https://i.ibb.co/cc4r29Xy/2.jpg",
+      "queryTitle": "Looking for alternatives with better battery life.",
+      "boycottingReason": "Battery drains quickly and uncomfortable after long use."
+    },
+    {
+      "id": 3,
+      "productName": "HP Pavilion 15",
+      "productBrand": "HP",
+      "productImageUrl": "https://i.ibb.co/WWT5xR7W/3.jpg",
+      "queryTitle": "Can I find a better laptop for coding at this price?",
+      "boycottingReason": "Overheating issues and poor build quality after few months."
+    },
+    {
+      "id": 4,
+      "productName": "Sony WH-1000XM4",
+      "productBrand": "Sony",
+      "productImageUrl": "https://i.ibb.co/ynknYsXF/4.jpg",
+      "queryTitle": "Any alternatives with similar noise cancellation but cheaper?",
+      "boycottingReason": "Great features but overpriced in my region."
+    },
+    {
+      "id": 5,
+      "productName": "Fitbit Versa 3",
+      "productBrand": "Fitbit",
+      "productImageUrl": "https://i.ibb.co/G4CTwzxw/5.jpg",
+      "queryTitle": "Seeking a better fitness watch with longer battery life.",
+      "boycottingReason": "Battery doesn’t last as advertised and frequent sync issues."
+    },
+    {
+      "id": 6,
+      "productName": "Dell XPS 13",
+      "productBrand": "Dell",
+      "productImageUrl": "https://i.ibb.co/F42cQHgx/6.jpg",
+      "queryTitle": "Is there a lighter alternative with better thermal performance?",
+      "boycottingReason": "Gets too hot under load and lacks proper port variety for the price."
+    }
+]

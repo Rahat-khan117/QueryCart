@@ -159,7 +159,7 @@ const handleLogout = () => {
         <div className={ menu ? "fixed top-[70px] right-0 z-20" : "hidden"}>
             <MenuLog></MenuLog>
         </div>
-        <div className="min-h-[calc(100vh-240px)]  pt-[70px] bg-[#EFEFEF]">
+        <div className="min-h-[calc(100vh-240px)]  pt-[70px] bg-[#EFEFEF] pb-12">
           <Outlet></Outlet>
         </div>
         <div>
