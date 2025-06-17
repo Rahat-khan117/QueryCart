@@ -1,8 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
+import QueryCart from "../assets/Compnents/QueryCart";
 
 const MyQueries = () => {
     const navigate = useNavigate();
+    const queries = useLoaderData();
   return (
     <div className="px-4 md:px-10 lg:px-14">
       <div className="mt-10 px-4">
@@ -17,6 +19,20 @@ const MyQueries = () => {
            <button onClick={() => navigate('/addQueries')} className="btn bg-[#3c5de3] text-white lg:text-2xl text-xl lg:px-14 lg:py-5 rounded-2xl absolute md:bottom-[38%] bottom-[23%] md:left-[41%] left-[27%] sm:bottom-[30%] sm:left-[37%]"> Add Queries</button>
         </div>
       </div>
+
+
+     <div className="mt-12"> 
+        <div>
+            <p className="text-3xl font-bold text-center">My All Queries Here</p>
+            <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 mt-6">
+            {queries.map((query) => (
+              <QueryCart query={query}></QueryCart>
+            ))}
+            </div>
+            
+        </div>
+        <div></div>
+     </div>
     </div>
   );
 };

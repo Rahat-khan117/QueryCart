@@ -9,6 +9,7 @@ import SignUp from "../Pages/SignUp";
 import MyRec from "../Pages/MyRec";
 import Error from "../Pages/Error";
 import AddQueries from "../Pages/AddQueries";
+import UpdateQ from "../Pages/UpdateQ";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,7 @@ export const router = createBrowserRouter([
         {
             path:'/myQueries',
             element:<MyQueries></MyQueries>,
+            loader: () => fetch('http://localhost:3000/createQuery')
             
     
         },
@@ -53,6 +55,11 @@ export const router = createBrowserRouter([
         {
             path:'/addQueries',
             element:<AddQueries></AddQueries>
+        },
+        {
+            path:'/updateQ/:id',
+            element:<UpdateQ></UpdateQ>,
+            loader: () => fetch('http://localhost:3000/createQuery')
         }
       ]
     }
