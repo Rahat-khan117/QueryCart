@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import SignUp from "../Pages/SignUp";
 import MyRec from "../Pages/MyRec";
 import Error from "../Pages/Error";
+import AddQueries from "../Pages/AddQueries";
 
 export const router = createBrowserRouter([
     {
@@ -48,6 +49,10 @@ export const router = createBrowserRouter([
             path:'/myRec',
             element:<MyRec></MyRec>,
             
+        },
+        {
+            path:'/addQueries',
+            element:<AddQueries></AddQueries>
         }
       ]
     }
