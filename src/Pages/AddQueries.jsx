@@ -41,7 +41,7 @@ const AddQueries = () => {
     }
 
     // send data to the server
-    fetch("http://localhost:3000/createQuery", {
+    fetch("https://11-server-side.vercel.app/createQuery", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,7 +53,7 @@ const AddQueries = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "You have Created a new group successfully.",
+            text: "You have Created a new Query successfully.",
             icon: "success",
             confirmButtonText: "OK",
           });

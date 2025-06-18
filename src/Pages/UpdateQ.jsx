@@ -17,7 +17,7 @@ const UpdateQ = () => {
     console.log(updateQ);
 
      // send updated data to the server
-    fetch(`http://localhost:3000/createQuery/${machDetails._id}`, {
+    fetch(`https://11-server-side.vercel.app/createQuery/${machDetails._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

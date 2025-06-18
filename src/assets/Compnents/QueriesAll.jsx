@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 
 const QueriesAll = ({query}) => {
+    const navigate = useNavigate();
     return (
         <div  className={`  rounded-xl px-4 py-4 relative cursor-pointer bg-[#d5ead2] text-black `} >
             <img className='h-[200px] w-full rounded-2xl' src={query.photo_url} />
@@ -9,7 +11,7 @@ const QueriesAll = ({query}) => {
             <p className='mt-3'>{query.qTitle}</p>
             <div className='md:flex justify-between items-center mt-3'>
                 <p className='font-bold'>Recommendation Count : {query.recCount}</p>
-                <button className='btn bg-blue-500 text-white mt-3'>Recommend</button>
+                <button onClick={()=>navigate(`/queryDetails/${query._id}`)} className='btn bg-blue-500 text-white mt-3'>Recommend</button>
             </div>
         </div>
     );

@@ -16,7 +16,7 @@ const QueryCart = ({query}) => {
     }).then((result) => {
       if (result.isConfirmed) {
         // start deleting group
-        fetch(`http://localhost:3000/createQuery/${id}`, {
+        fetch(`https://11-server-side.vercel.app/createQuery/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -43,7 +43,7 @@ const QueryCart = ({query}) => {
             <p className='mt-3'>{query.qTitle}</p>
             <div className='flex gap-3 mt-4
             '>
-                <button className='bg-green-500 text-white btn'>View</button>
+                <button onClick={()=>navigate(`/queryDetails/${query._id}`)} className='bg-green-500 text-white btn'>View</button>
                 <button onClick={()=>navigate(`/updateQ/${query._id}`)} className='bg-blue-500 text-white btn'>Update</button>
                 <button onClick={() => handleDelete(query._id)} className='bg-red-500 text-white btn'>delete</button>
             </div>
