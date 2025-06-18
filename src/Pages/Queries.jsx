@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router";
 import QueriesAll from "../assets/Compnents/QueriesAll";
 
 const Queries = () => {
+    const [grid ,setGrid] = useState(false);
   const queries = useLoaderData();
   const [AllQ ,setAllQ] = useState(queries)
   const [searchText, setSearchText] = useState('');
@@ -25,7 +26,11 @@ const Queries = () => {
                 </div>
             </form>
         </div>
-        <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 mt-6">
+        <div className="hidden md:flex mt-4 gap-4">
+           <button onClick={()=> setGrid(true)} className="btn bg-blue-500 text-white">2 Column</button>
+           <button onClick={()=> setGrid(false)} className="btn bg-green-500 text-white">3 Column</button>
+        </div>
+        <div className={`grid  sm:grid-cols-2 gap-5 mt-6 ${grid ? 'md:grid-cols-2 px-18' : 'md:grid-cols-3'}`}>
           {AllQ.map((query) => (
             <QueriesAll query={query}></QueriesAll>
           ))}
