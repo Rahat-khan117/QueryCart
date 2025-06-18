@@ -20,7 +20,7 @@ const MyQueries = () => {
             onClick={() => navigate("/addQueries")}
             className="btn bg-[#3c5de3] text-white lg:text-2xl text-xl lg:px-14 lg:py-5 rounded-2xl absolute md:bottom-[38%] bottom-[23%] md:left-[41%] left-[27%] sm:bottom-[30%] sm:left-[37%]"
           >
-            {" "}
+            
             Add Queries
           </button>
         </div>
