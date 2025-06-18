@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import QueriesAll from "../assets/Compnents/QueriesAll";
 
 const Queries = () => {
   const queries = useLoaderData();
+  const [AllQ ,setAllQ] = useState(queries)
+  const [searchText, setSearchText] = useState('');
+  const handleSearch = (e,text) => {
+     e.preventDefault();
+     const searchQueries = queries.filter(query => query.pName.toLowerCase().split(' ').includes(text.toLowerCase()) === true);
+     setAllQ(searchQueries);
+  }
   return (
     <div className="px-5 md:px-14 lg:px-12">
       <div className="mt-12">
-        <p className="text-3xl font-bold">All Queries Here</p>
+        <div className="sm:flex sm:justify-between">
+            <p className="text-3xl font-bold">All Queries Here</p>
+            <form onSubmit={(e) => handleSearch(e,searchText)}>
+                <div className="flex mt-3">
+                    <input 
+                    onChange={e => setSearchText(e.target.value)}
+                    value={searchText} className="border-1 rounded-tl-lg rounded-bl-lg border-[#0000009c] bg-[#fff] px-3" placeholder="Search your query" type="text" />
+                <button type="submit" className="btn bg-green-500 text-white">Search</button>
+                </div>
+            </form>
+        </div>
         <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 mt-6">
-          {queries.map((query) => (
+          {AllQ.map((query) => (
             <QueriesAll query={query}></QueriesAll>
           ))}
         </div>
