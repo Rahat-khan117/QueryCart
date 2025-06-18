@@ -9,7 +9,7 @@ const Queries = () => {
   const [searchText, setSearchText] = useState('');
   const handleSearch = (e,text) => {
      e.preventDefault();
-     const searchQueries = queries.filter(query => query.pName.toLowerCase().split(' ').includes(text.toLowerCase()) === true);
+     const searchQueries = queries.filter(query => query.pName.toLowerCase().split(' ').includes(text.toLowerCase()) === true)
      setAllQ(searchQueries);
   }
   return (
