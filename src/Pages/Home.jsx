@@ -9,7 +9,7 @@ const Home = () => {
     <div>
       <div className="carousel w-full h-[500px]">
         <div id="slide1" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/Cp4nw9hp/2.jpg" className="w-full" />
+          <img src="https://i.ibb.co/Cp4nw9hp/2.jpg" className="w-full brightness-50" />
           <div className="absolute top-[25%]  left-[10%]">
             <div>
               <p className="lx:text-6xl lg:text-4xl md:text-2xl sm:text-4xl text-xl text-white font-bold ">
@@ -45,8 +45,32 @@ const Home = () => {
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
-            <img src="https://i.ibb.co/1tZHKJzb/1.jpg" className="w-full" />
+            <img src="https://i.ibb.co/1tZHKJzb/1.jpg" className="w-full brightness-50" />
           
+          <div className="absolute top-[25%]  left-[10%]">
+            <div>
+              <p className="lx:text-6xl lg:text-4xl md:text-2xl sm:text-4xl text-xl text-white font-bold ">
+                Find Better Alternatives, <br /> Faster Smarter Recommendations
+                with QueryCart
+              </p>
+              <p className="text-white mt-2 lg:text-[16px] text-[14px] ">
+                Ask product-related queries and get personalized suggestions
+                from a community <br /> that cares. From smartphones to
+                smartwatches — we help you <br /> compare with confidence. Start
+                your search, skip the guesswork.
+              </p>
+              <div className="flex mt-4">
+                <button className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                  <i className="fa-brands fa-wpexplorer"></i>
+                  <span className="ml-1">Explore</span>
+                </button>
+                <button className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                  <i class="fa-brands fa-readme"></i>
+                  <span className="ml-1">Read</span>
+                </button>
+              </div>
+            </div>
+          </div>
 
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide1" className="btn btn-circle">
@@ -58,7 +82,7 @@ const Home = () => {
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/7tBq8LZn/3.jpg" className="w-full" />
+          <img src="https://i.ibb.co/7tBq8LZn/3.jpg" className="w-full brightness-50" />
 
           <div className="absolute top-[25%]  left-[10%]">
             <div>
@@ -94,7 +118,32 @@ const Home = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src="https://i.ibb.co/8n6F0W1Z/4.jpg" className="w-full" />
+          <img src="https://i.ibb.co/8n6F0W1Z/4.jpg" className="w-full brightness-50" />
+
+          <div className="absolute top-[25%]  left-[10%]">
+            <div>
+              <p className="lx:text-6xl lg:text-4xl md:text-2xl sm:text-4xl text-xl text-white font-bold ">
+                Find Better Alternatives, <br /> Faster Smarter Recommendations
+                with QueryCart
+              </p>
+              <p className="text-white mt-2 lg:text-[16px] text-[14px] ">
+                Ask product-related queries and get personalized suggestions
+                from a community <br /> that cares. From smartphones to
+                smartwatches — we help you <br /> compare with confidence. Start
+                your search, skip the guesswork.
+              </p>
+              <div className="flex mt-4">
+                <button className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                  <i className="fa-brands fa-wpexplorer"></i>
+                  <span className="ml-1">Explore</span>
+                </button>
+                <button className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                  <i class="fa-brands fa-readme"></i>
+                  <span className="ml-1">Read</span>
+                </button>
+              </div>
+            </div>
+          </div>
           
           <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
             <a href="#slide3" className="btn btn-circle">
