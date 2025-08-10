@@ -43,6 +43,7 @@ const QueryDetails = () => {
                 icon: "success",
                 confirmButtonText: "OK",
               });
+              location.reload();
             }
           });
    }
@@ -217,12 +218,13 @@ const QueryDetails = () => {
            
           </div>
         <div >
+          <p className="text-3xl font-bold text-center">All Recommendation</p>
             {
                     machRec.map((rec) => {
                         console.log(rec);
                      return (
                     <div>
-                        <p className="text-3xl font-bold text-center">All Recommendation</p>
+                        
                         <div className="relative bg-white rounded-3xl mt-20 w-full px-5 py-5 flex md:gap-6 gap-3 items-center
                     ">
                         <div className='absolute -top-7 -left-3 flex gap-3 '>

@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("../recentQuery.json"),
+        loader: () => fetch("https://11-server-side.vercel.app/createQuery"),
       },
       {
         path: "/queries",
