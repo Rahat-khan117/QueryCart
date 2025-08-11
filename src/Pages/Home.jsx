@@ -1,8 +1,9 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import RecentCart from "../assets/Compnents/recentCart";
 
 const Home = () => {
+  const navigate = useNavigate();
     const query = useLoaderData();
     console.log(query);
   return (
@@ -23,11 +24,11 @@ const Home = () => {
                 your search, skip the guesswork.
               </p>
               <div className="flex mt-4">
-                <button className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i className="fa-brands fa-wpexplorer"></i>
                   <span className="ml-1">Explore</span>
                 </button>
-                <button className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i class="fa-brands fa-readme"></i>
                   <span className="ml-1">Read</span>
                 </button>
@@ -60,11 +61,11 @@ const Home = () => {
                 your search, skip the guesswork.
               </p>
               <div className="flex mt-4">
-                <button className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i className="fa-brands fa-wpexplorer"></i>
                   <span className="ml-1">Explore</span>
                 </button>
-                <button className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i class="fa-brands fa-readme"></i>
                   <span className="ml-1">Read</span>
                 </button>
@@ -96,11 +97,11 @@ const Home = () => {
                 within <br /> the community. On QueryCart, every voice adds value.
               </p>
               <div className="flex mt-4">
-                <button className="text-white border-1 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-1 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i class="fa-brands fa-wpexplorer"></i>
                   <span className="ml-1">Explore</span>
                 </button>
-                <button className="text-white border-1 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-1 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i class="fa-brands fa-readme"></i>
                   <span className="ml-1">Read</span>
                 </button>
@@ -133,11 +134,11 @@ const Home = () => {
                 your search, skip the guesswork.
               </p>
               <div className="flex mt-4">
-                <button className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-whit w-[140px] h-[45px] rounded-tl-2xl rounded-bl-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i className="fa-brands fa-wpexplorer"></i>
                   <span className="ml-1">Explore</span>
                 </button>
-                <button className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
+                <button onClick={()=>navigate("/queries")} className="text-white border-2 border-white w-[140px] h-[45px] rounded-tr-2xl rounded-br-2xl text-xl cursor-pointer hover:bg-white hover:text-black">
                   <i class="fa-brands fa-readme"></i>
                   <span className="ml-1">Read</span>
                 </button>
@@ -160,7 +161,7 @@ const Home = () => {
          <div className="flex justify-center mt-4">
           <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 ">
             {query.map((query) => (
-              <RecentCart query={query}></RecentCart>
+              <RecentCart key={query._id} query={query}></RecentCart>
             ))}
           </div>
           </div>
@@ -174,6 +175,19 @@ const Home = () => {
           />
         </div>
       </div>
+
+
+      <div className="md:px-10 lg:px-15 px-4 mt-14">
+         <p className="text-3xl font-bold">Trending Recommendation</p>
+         <div className="flex justify-center mt-4">
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-5 ">
+            {query.map((query) => (
+              <RecentCart key={query._id} query={query}></RecentCart>
+            ))}
+          </div>
+          </div>
+      </div>
+
       <div className="mt-12 px-4 sm:px-7 md:px-12 lg:px-20">
         <p className="font-bold text-3xl text-center">Recommend batter here</p>
         <div className="bg-white rounded-2xl px-4 py-4 mt-4">
