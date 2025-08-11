@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useNavigate, useNavigation } from "react-router";
 import Navbar from "../assets/Compnents/MainComponents/Navbar";
 import Footer from "../assets/Compnents/MainComponents/Footer";
 import { auth } from "../FireBase/firebase.config";
@@ -10,6 +10,7 @@ import MenuLog from "../assets/Compnents/MenuLog";
 export const valueContext = createContext();
 
 const MainLayout = () => {
+  const navigation = useNavigation();
     const [userN,setUserN] = useState(null)
     const navigate = useNavigate();
 
@@ -159,8 +160,20 @@ const handleLogout = () => {
         <div className={ menu ? "fixed top-[70px] right-0 z-20" : "hidden"}>
             <MenuLog></MenuLog>
         </div>
+
         <div className="min-h-[calc(100vh-240px)]  pt-[70px] bg-[#EFEFEF] pb-12">
-          <Outlet></Outlet>
+          <div>
+      {/* Global Loader */}
+      {navigation.state === "loading" && (
+        <div className="fixed inset-0 bg-white flex gap-3 justify-center items-center z-50 ">
+          <span className="loading loading-spinner loading-xl text-primary"></span>
+        <p className="text-lg font-medium">Loading...</p>
+        </div>
+      )}
+
+      {/* Page Content */}
+      <Outlet />
+    </div>
         </div>
         <div>
           <Footer></Footer>

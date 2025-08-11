@@ -3,9 +3,11 @@ import { useLoaderData, useNavigate } from "react-router";
 import RecentCart from "../assets/Compnents/recentCart";
 
 const Home = () => {
+  
   const navigate = useNavigate();
     const query = useLoaderData();
-    console.log(query);
+
+
   return (
     <div>
       <div className="carousel w-full h-[500px]">

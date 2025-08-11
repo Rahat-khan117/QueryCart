@@ -11,6 +11,16 @@ const Queries = () => {
      e.preventDefault();
      const searchQueries = queries.filter(query => query.pName.toLowerCase().split(' ').includes(text.toLowerCase()) === true);
      setAllQ(searchQueries);
+
+
+
+
+
+
+
+
+
+     
   }
   return (
     <div className="px-5 md:px-14 lg:px-12">
